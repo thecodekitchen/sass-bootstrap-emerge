@@ -515,6 +515,7 @@ h1[id] {
   margin: 20px 0;
   padding: 15px 30px 15px 15px;
   border-left: 5px solid #eee;
+  color: #000; /* FIX For our inverted black/white colour scheme */
 }
 .bs-callout h4 {
   margin-top: 0;
@@ -604,7 +605,8 @@ h1[id] {
   .bs-example {
     margin-left: 0;
     margin-right: 0;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: transparent; /* OVERRIDE */
     border-width: 1px;
     border-color: #ddd;
     border-radius: 4px 4px 0 0;

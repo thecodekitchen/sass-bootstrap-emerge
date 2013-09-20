@@ -15,10 +15,20 @@ $gray:                   lighten(#000, 33.5%) !default; // #555
 $gray-light:             lighten(#000, 60%) !default;   // #999
 $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 
+// Because we're English we can use more colours:
+$grey-darkest: 	#282826;
+$grey-darker: 	#535352;
+$grey-dark: 		#727271;
+$grey: 					#999999;
+$grey-light: 		#a5a5a4;
+$grey-lighter: 	#bebebd;
+$grey-lightest: #dadad9;
+
 // Brand colors
 // -------------------------
 
-$brand-primary:         #428bca !default;
+// $brand-primary:         #428bca !default;
+$brand-primary:         #999999 !default;
 $brand-success:         #5cb85c !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
@@ -27,8 +37,11 @@ $brand-info:            #5bc0de !default;
 // Scaffolding
 // -------------------------
 
-$body-bg:               #fff !default;
-$text-color:            $gray-dark !default;
+// $body-bg:               #fff !default;
+$body-bg:               #000 !default;
+// $text-color:            $gray-dark !default;
+$text-color:            #fff !default;
+
 
 // Links
 // -------------------------
@@ -36,11 +49,52 @@ $text-color:            $gray-dark !default;
 $link-color:            $brand-primary !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 
+
 // Typography
 // -------------------------
 
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+@font-face {
+font-family: 'didot_lt_std-roman';
+src: url('../fonts/didot_lt_std/didot_lt_std-roman-web/fonts/a.eot');
+src: local('☺'),
+url('../fonts/didot_lt_std/didot_lt_std-roman-web/fonts/a.woff') format('woff'),
+url('../fonts/didot_lt_std/didot_lt_std-roman-web/fonts/a.ttf') format('truetype'),
+url('../fonts/didot_lt_std/didot_lt_std-roman-web/fonts/a.svg') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'gotham-bold';
+src: url('../fonts/gotham-bold/gotham-bold-web/fonts/b.eot');
+src: local('☺'),
+url('../fonts/gotham/gotham-bold-web/fonts/b.woff') format('woff'),
+url('../fonts/gotham/gotham-bold-web/fonts/b.ttf') format('truetype'),
+url('../fonts/gotham/gotham-bold-web/fonts/b.svg') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'gotham-light';
+src: url('../fonts/gotham/gotham-light-web/fonts/c.eot');
+src: local('☺'),
+url('../fonts/gotham/gotham-light-web/fonts/c.woff') format('woff'),
+url('../fonts/gotham/gotham-light-web/fonts/c.ttf') format('truetype'),
+url('../fonts/gotham/gotham-light-web/fonts/c.svg') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+// Reference font stack syntax
+// $font-family-sans-serif:  gotham-bold, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+// $font-family-sans-serif:  gotham-light, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+// $font-family-serif:       didot_lt_std-roman, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+// $font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  gotham-light, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+// $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+$font-family-serif:       didot_lt_std-roman, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
@@ -51,11 +105,12 @@ $font-size-small:         ceil($font-size-base * 0.85) !default; // ~12px
 $line-height-base:        1.428571429 !default; // 20/14
 $line-height-computed:    floor($font-size-base * $line-height-base) !default; // ~20px
 
-$headings-font-family:    $font-family-base !default;
+$headings-font-family:    gotham-bold, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $headings-font-weight:    500 !default;
 $headings-line-height:    1.1 !default;
 
-// Iconography
+
+// Iconography TODO
 // -------------------------
 
 $icon-font-path:          "../fonts/" !default;
@@ -78,7 +133,8 @@ $padding-small-horizontal:       10px !default;
 $line-height-large:              1.33 !default;
 $line-height-small:              1.5 !default;
 
-$border-radius-base:             4px !default;
+// $border-radius-base:             4px !default;
+$border-radius-base:             0 !default; // NB Not many round corners in this design
 $border-radius-large:            6px !default;
 $border-radius-small:            3px !default;
 
@@ -87,6 +143,7 @@ $component-active-bg:            $brand-primary !default;
 $caret-width-base:               4px !default;
 $caret-width-large:              5px !default;
 
+
 // Tables
 // -------------------------
 
@@ -94,8 +151,10 @@ $table-cell-padding:                 8px !default;
 $table-condensed-cell-padding:       5px !default;
 
 $table-bg:                           transparent !default; // overall background-color
-$table-bg-accent:                    #f9f9f9 !default; // for striping
-$table-bg-hover:                     #f5f5f5 !default;
+// $table-bg-accent:                    #f9f9f9 !default; // for striping
+$table-bg-accent:                    $grey-darkest !default; // for striping
+// $table-bg-hover:                     #f5f5f5 !default;
+$table-bg-hover:                     $grey-darkest !default;
 $table-bg-active:                    $table-bg-hover !default;
 
 $table-border-color:                 #ddd !default; // table and cell border
@@ -106,9 +165,12 @@ $table-border-color:                 #ddd !default; // table and cell border
 
 $btn-font-weight:                normal !default;
 
-$btn-default-color:              #333 !default;
-$btn-default-bg:                 #fff !default;
-$btn-default-border:             #ccc !default;
+// $btn-default-color:              #333 !default;
+$btn-default-color:              #fff !default;
+// $btn-default-bg:                 #fff !default;
+$btn-default-bg:                 #000 !default;
+// $btn-default-border:             #ccc !default;
+$btn-default-border:             #fff !default;
 
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
@@ -195,6 +257,7 @@ $zindex-tooltip:           1030 !default;
 $zindex-navbar-fixed:      1030 !default;
 $zindex-modal-background:  1040 !default;
 $zindex-modal:             1050 !default;
+
 
 // Media queries breakpoints
 // --------------------------------------------------
@@ -580,13 +643,16 @@ $close-text-shadow:           0 1px 0 #fff !default;
 
 // Code
 // ------------------------
-$code-color:                  #c7254e !default;
+// $code-color:                  #c7254e !default;
+// $code-color:                  $brand-primary !default; // NB Too light in this instance
+$code-color:                  $grey-darker !default;
 $code-bg:                     #f9f2f4 !default;
 
 $pre-bg:                      #f5f5f5 !default;
 $pre-color:                   $gray-dark !default;
 $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
+
 
 // Type
 // ------------------------
@@ -596,6 +662,7 @@ $headings-small-color:        $gray-light !default;
 $blockquote-small-color:      $gray-light !default;
 $blockquote-border-color:     $gray-lighter !default;
 $page-header-border-color:    $gray-lighter !default;
+
 
 // Miscellaneous
 // -------------------------
