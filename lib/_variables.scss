@@ -38,15 +38,17 @@ $brand-info:            #5bc0de !default;
 // -------------------------
 
 // $body-bg:               #fff !default;
-$body-bg:               #000 !default;
+$body-bg:               #ffffff !default;
 // $text-color:            $gray-dark !default;
-$text-color:            #fff !default;
+$text-color:            #444444 !default;
 
 
 // Links
 // -------------------------
 
-$link-color:            $brand-primary !default;
+// $link-color:            $brand-primary !default;
+$link-color: 			$grey-darkest;
+$link-hover-color:      darken($link-color, 15%) !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 
 
@@ -170,7 +172,7 @@ $btn-default-color:              #fff !default;
 // $btn-default-bg:                 #fff !default;
 $btn-default-bg:                 #000 !default;
 // $btn-default-border:             #ccc !default;
-$btn-default-border:             #fff !default;
+$btn-default-border:             #000 !default;
 
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
